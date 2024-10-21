@@ -3,8 +3,8 @@ import {Clippetlogo,CartIcon,Profileicon}from "../image"
 // import SearchIcon from "@mui/icons-material/Search";/
 import styles from "./header.module.css"
 
-  const Header=()=>{
-    const categories = [
+
+const categories = [
   {
     name: "Branding",
     nameApi: "Branding Design",
@@ -56,6 +56,8 @@ import styles from "./header.module.css"
     subcategories: ["Greeting Cards", "Event Invitations"],
   },
 ];
+
+  const Header=()=>{
     return(
       <div className={styles.headerwrapper}>
         <header className={styles.header}>

@@ -19,6 +19,19 @@ import swiggyLogo from "../assets/brandsLogo/swiggyLogo.png"
 import tataLogo from "../assets/brandsLogo/tataLogo.png"
 import UCLogo from "../assets/brandsLogo/UCLogo.png"
 import zomatoLogo from "../assets/brandsLogo/zomatoLogo.png"
+import benifitsFive from "../assets/benifits/benifitsFive.png"
+import benifitsFour from "../assets/benifits/benifitsFour.png"
+import benifitsOne from "../assets/benifits/benifitsOne.png"
+import benifitsSix from "../assets/benifits/benifitsSix.png"
+import benifitsThree from "../assets/benifits/benifitsThree.png"
+import benifitsTwo from "../assets/benifits/benifitsTwo.png"
+import leftSideLine from "../assets/benifits/leftSideLine.png"
+import rightSideLine from "../assets/benifits/rightSideLine.png"
+import howWorksFour from "../assets/clippetworks/howWorksFour.png"
+import howWorksone from "../assets/clippetworks/howWorksone.png"
+import howWorksThree from "../assets/clippetworks/howWorksThree.png"
+import howWorksTwo from "../assets/clippetworks/howWorksTwo.png"
+
 
 export{
     Clippetlogo,
@@ -42,6 +55,18 @@ export{
     tataLogo,
     UCLogo,
     zomatoLogo,
+    benifitsFive,
+    benifitsFour,
+    benifitsOne,
+    benifitsSix,
+    benifitsThree,
+    benifitsTwo,
+    leftSideLine,
+    rightSideLine,
+    howWorksFour,
+    howWorksone,
+    howWorksThree,
+    howWorksTwo,
 };
 
 
