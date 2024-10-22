@@ -21,37 +21,19 @@ import {
       ];
     return(
         <>
-        <div
-        style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "20px",
-            backgroundColor: "#ffffff",
-            borderRadius: "8px",
-            overflowX: "visible",
-            whiteSpace: "normal",
-          }}
-          >
-            {logos.map((logo,index)=>(
-                <div key={index}
-                style={{
-                    flex: "1",
-                    textAlign: "center",
-                    padding: "10px",
-                    marginRight: "0",
-                  }}>
-                <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={120}
-            height={40}
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-            }}
-          />
-            </div>))}
+        <div 
+        style={{display: "flex",
+          padding: "20px",
+          }}>
+          {logos.map((logo)=>(
+            <div style={{
+              flex: 1,
+              textAlign: "center",
+              padding: "10px",
+            }}>
+              <Image width={120} height={40} style={{maxWidth:"100%",height:"auto"}} src={logo.src} alt={logo.alt}/>
+            </div>
+          ))}
         </div>
         </>
     )

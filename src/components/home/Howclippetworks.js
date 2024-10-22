@@ -7,6 +7,7 @@ import {
     howWorksThree,
     howWorksone,
     } from "../image"
+import { makeStyles } from "@mui/styles";
 
 
 const steps = [
@@ -38,32 +39,100 @@ const steps = [
     },
   ];
 
+  const useStyles = makeStyles((theme)=>({
+    container:{
+        padding:"0px 20px"
+    },
+    header:{
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center"
+    },
+    rightSideLine:{
+        width:"250px",
+        heighgt:"auto"
+    },
+    textcontainer:{
+        padding:"5px 10px",
+        margin:"0 10px",
+        display:"flex",
+    },
+    text:{
+        fontSize:"32px",
+        fontWeight:"600",
+    },
+    leftSideLine:{
+        width:"250px",
+        heighgt:"auto"
+    },
+    text2:{
+        textAlign:"center",
+        margin:"0px"
+    },
+    stepwrapper:{
+        paddingTop:"30px",
+        paddingLeft:"30px",
+        boxSizing:"border-box"
+    },
+    stepcontainer:{
+        display:"flex",
+        flexDirection:"column",
+        padding:"20px"
+    },
+    stepnumber:{
+        backgroundColor:"#6F42E5",
+        borderRadius:"50%",
+        color:"#fff",
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center",
+        width:"40px",
+        height:"40px"
+    },
+    stepimage:{
+        width:"200px",
+        height:"200px"
+    },
+    steptitle:{
+        margin:"0px",
+        fontWeight: 600,
+        fontSize:"16px",
+        textAlign:"center",
+        color: "#6F42E5"
+    },
+    stepdescription:{
+        margin:"0px",
+        textAlign:"center"
+    },
+  }));
+
 
 const Howclippetworks = () => {
+    const classes = useStyles()
     return(
         <>
-            <div style={{padding:"0px 20px"}}>
-                <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                    <Image style={{width:"250px",heighgt:"auto"}} src={rightSideLine}/>
-                    <div style={{padding:"5px 10px",margin:"0 10px",display:"flex"}}>
-                        <span style={{fontSize:"32px",fontWeight:"600"}}>How Clippet Works</span>
+            <div className={classes.container}>
+                <div className={classes.header}>
+                    <Image className={classes.rightSideLine} src={rightSideLine}/>
+                    <div className={classes.textcontainer}>
+                        <span className={classes.text}>How Clippet Works</span>
                     </div>
-                    <Image style={{width:"250px",heighgt:"auto"}} src={leftSideLine}/>
+                    <Image className={classes.leftSideLine} src={leftSideLine}/>
                 </div>
-                <p style={{textAlign:"center",margin:"0px"}}>Our design process streamlined to perfection</p>
-                <div style={{marginTop:"20px",display:"flex"}}>
+                <p className={classes.text2}>Our design process streamlined to perfection</p>
+                <div style={{marginTop:"20px", display:"grid", gridTemplateColumns:"auto auto auto auto"}}>
                     {steps.map((step)=>(
-                        <div style={{paddingTop:"30px",paddingLeft:"30px"}}>
-                        <div style={{display:"flex",flexDirection:"column",padding:"20px"}}>
-                            <div style={{backgroundColor:"#6F42E5",borderRadius:"50%",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center", width:"40px", height:"40px"}}>{step.number}</div>
+                        <div className={classes.stepwrapper}>
+                        <div className={classes.stepcontainer}>
+                            <div className={classes.stepnumber}>{step.number}</div>
                             <div >
-                                <img style={{width:"200px",height:"200px"}} src={step.image}/>
+                                <img className={classes.stepimage}  src={step.image}/>
                             </div>
                             <div>
-                                <h6 style={{margin:"0px",textAlign:"center"}}>
+                                <h6 className={classes.steptitle}>
                                     {step.title}
                                 </h6>
-                                <p style={{margin:"0px",textAlign:"center"}}>
+                                <p className={classes.stepdescription}>
                                     {step.description}
                                 </p>
                             </div>

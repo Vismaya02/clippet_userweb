@@ -124,7 +124,6 @@ const Footer = () => {
             </Grid2>
             <div className={style.bottomsection}>
                 <br/>
-                {/* <Divider sx={{color:"white"}}/> */}
                 <Typography variant="body2" className={style.copyright}>Clippet &trade; {new Date().getFullYear()} All Rights Reserved</Typography>
             </div>
         </footer>

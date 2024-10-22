@@ -32,7 +32,6 @@ import howWorksone from "../assets/clippetworks/howWorksone.png"
 import howWorksThree from "../assets/clippetworks/howWorksThree.png"
 import howWorksTwo from "../assets/clippetworks/howWorksTwo.png"
 
-
 export{
     Clippetlogo,
     CartIcon,

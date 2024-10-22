@@ -9,6 +9,7 @@ import {
     leftSideLine,
     rightSideLine,
   } from "../image";
+import { makeStyles } from "@mui/styles";
 
 const benefits = [
     {
@@ -19,13 +20,11 @@ const benefits = [
     {
       icon: benifitsTwo,
       title: "Assured",
-      // subtitle: "On Time Delivery*",
       subtitle: "On Time Delivery",
     },
     {
       icon: benifitsSix,
       title: "16 Point",
-      // subtitle: "Quality Check*",
       subtitle: "Quality Check",
     },
     {
@@ -36,7 +35,6 @@ const benefits = [
     {
       icon: benifitsFour,
       title: "Transparent",
-      // subtitle: "Pricing*",
       subtitle: "Pricing",
     },
     {
@@ -46,28 +44,81 @@ const benefits = [
     }
 ]
     
-    
+const useStyles = makeStyles((theme)=>({
+  root: {
+    padding:"30px 10px"
+  },
+  heading: {
+    fontSize:"32px",
+    fontWeight:"600",
+    margin:"0px"
+  },
+  headercontainer: {
+    padding:"5px 10px",
+    margin:"0 10px",
+    display:"flex"    
+  },
+  benefitCardContainer: {
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center"
+  },
+  benefitContainer: {
+    display:"flex",
+    paddingTop:"30px",
+    justifyContent:"center",
+    gap:"15px"
+  },
+  benefitCard: {
+    backgroundColor:"#6C3AD1",
+    borderRadius:"10px",
+    width:"178px",
+    textAlign:"center",
+    padding:"10px 0px"
+  },
+  icon: {
+    width:"120px",
+    height:"120px"
+  },
+  title: {
+    color:"white"
+  },
+  subtitle: {
+    color:"white"
+  },
+  sideImage: {
+    width:"250px",
+    height:"auto"
+  },
+  bannerContainer:{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center"
+  }
+}));
+
     
 const BenefitSection = () => {
+  const classes = useStyles();
     return(
         <>
-        <div style={{padding:"30px 10px"}}>
-            <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                <Image src={rightSideLine} style={{width:"250px",height:"auto"}}></Image>
-                <div style={{padding:"5px 10px",margin:"0 10px",display:"flex"}}>
-                  <h3 style={{fontSize:"32px",fontWeight:"600",margin:"0px"}}>Assured by Clippet</h3>
+        <div className={classes.root}>
+            <div className={classes.bannerContainer}>
+                <Image src={rightSideLine} className={classes.sideImage}></Image>
+                <div className={classes.headercontainer}>
+                  <h3 className={classes.heading}>Assured by Clippet</h3>
                 </div>
-                <Image src={leftSideLine} style={{width:"250px",height:"auto"}}></Image>
+                <Image src={leftSideLine} className={classes.sideImage}></Image>
             </div>
             <p style={{textAlign:"center",margin:"0px"}}>Your design needs, our assured commitment</p>
-            <div style={{display:"flex",paddingTop:"30px",justifyContent:"center",gap:"15px"}}>
+            <div className={classes.benefitContainer}>
               {benefits.map((benefits)=>(
-                <div style={{backgroundColor:"#6C3AD1",borderRadius:"10px", width:"178px", textAlign:"center",padding:"10px 0px"}}>
-                <Image src={benefits.icon} style={{width:"120px",height:"120px"}}/>
-                <h3 style={{color:"white"}}>
+                <div className={classes.benefitCard}>
+                <Image src={benefits.icon} className={classes.icon}/>
+                <h3 className={classes.title}>
                   {benefits.title}
                 </h3>
-                <p style={{color:"white"}}>
+                <p className={classes.subtitle}>
                   {benefits.subtitle}
                 </p>
               </div>))}

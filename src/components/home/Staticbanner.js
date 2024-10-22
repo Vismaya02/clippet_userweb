@@ -12,8 +12,9 @@ const useStyles = makeStyles((theme)=>({
     borderRadius:"10px",
     alignItems:"center",
     width:"74%",
-    height:"231px",
+    height:"200px",
     padding:"20px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   },
   statItem: {
     marginBottom:"20px"
