@@ -31,6 +31,10 @@ import howWorksFour from "../assets/clippetworks/howWorksFour.png"
 import howWorksone from "../assets/clippetworks/howWorksone.png"
 import howWorksThree from "../assets/clippetworks/howWorksThree.png"
 import howWorksTwo from "../assets/clippetworks/howWorksTwo.png"
+import clippetNewLogo from "../assets/clippetNewLogo.png"
+import clippetword from "../assets/clippetWord.png"
+import ClippetFooterLogo from "../assets/clippetFooterLogo.png"
+import closeicon from "../assets/closeIcon.png"
 
 export{
     Clippetlogo,
@@ -66,6 +70,10 @@ export{
     howWorksone,
     howWorksThree,
     howWorksTwo,
+    clippetNewLogo,
+    clippetword,
+    ClippetFooterLogo,
+    closeicon,
 };
 
 

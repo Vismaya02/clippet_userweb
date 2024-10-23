@@ -68,8 +68,12 @@ const Faqsection = () => {
   const classes = useStyles();
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleClick = (index) => {
+  const handleExpandMore = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const handleExpandLess = () => {
+    setOpenIndex(null);
   };
 
   return (
@@ -100,7 +104,7 @@ const Faqsection = () => {
               {faqdata.question}
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
-              {openIndex === index ?<ExpandLessIcon />:<ExpandMoreIcon onClick={() => handleClick(index)}/>}
+              {openIndex === index ?<ExpandLessIcon onClick={handleExpandLess}/>:<ExpandMoreIcon onClick={() => handleExpandMore(index)}/>}
             </div>
           </div>
           {openIndex === index && (

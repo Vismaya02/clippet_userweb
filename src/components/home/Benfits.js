@@ -46,7 +46,7 @@ const benefits = [
     
 const useStyles = makeStyles((theme)=>({
   root: {
-    padding:"30px 10px"
+    padding:"30px 10px",
   },
   heading: {
     fontSize:"32px",
@@ -74,7 +74,13 @@ const useStyles = makeStyles((theme)=>({
     borderRadius:"10px",
     width:"178px",
     textAlign:"center",
-    padding:"10px 0px"
+    padding:"10px 0px",
+    // position: "relative",
+    // transition: "2s",
+    transition: ".3s ease-in-out",
+    '&:hover':{
+      transform: "translateY(-5px)",
+    }
   },
   icon: {
     width:"120px",
