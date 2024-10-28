@@ -67,11 +67,10 @@
 
 .input{
   flex: 1;
-  color: #000;
   padding-left: 6px;
 }
 
-.searchButton{
+.searchIcon{
   color: #fff;
   border-radius: 9px;
 }

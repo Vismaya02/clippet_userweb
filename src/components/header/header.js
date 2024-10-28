@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { Clippetlogo, CartIcon, Profileicon } from "../image";
 import styles from "./header.module.css";
 import Login from "../login/login";
+import MenuIcon from '@mui/icons-material/Menu';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import SearchIcon from "@mui/icons-material/Search";
+import {InputBase} from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const categories = [
   { name: "Branding", nameApi: "Branding", subcategories: ["Business Cards", "Letter Heads", "Envelope Design", "Certificate Design"] },
@@ -17,19 +23,41 @@ const categories = [
 
 const Header = () => {
   const [mode, setMode] = useState(false);
+  const [sidebar,setSidebar] = useState(false);
 
   const handleOpen = () => {
     setMode(true);
+    document.body.style.overflow ="hidden"
   };
 
   const handleClose = () => {
     setMode(false);
+    document.body.style.overflow ="scroll"
+  };
+  
+  const handlesidebaropen =() =>{
+    setSidebar(true);
+  }
+
+  const windowscreen = useMediaQuery('(min-width:1000px)');
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleExpandMore = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const handleExpandLess = () => {
+    setOpenIndex(null);
   };
 
   return (
     <>
       <div className={styles.headerwrapper}>
         <header className={styles.header}>
+          {!windowscreen&&<div>
+            <MenuIcon style={{color:"white", height:"30px", width:"30px"}} onClick={handlesidebaropen}/>
+          </div>}
           <div className={styles.logo}>
             <img
               src={Clippetlogo}
@@ -38,7 +66,7 @@ const Header = () => {
               height={59.94}
             />
           </div>
-          <nav className={styles.categoryNav}>
+          {windowscreen&&<nav className={styles.categoryNav}>
             {categories.map((data, index) => (
               <div key={index} className={styles.dropdown}>
                 <button className={styles.categoryButton}>{data.name}</button>
@@ -51,7 +79,35 @@ const Header = () => {
                 </div>
               </div>
             ))}
-          </nav>
+          </nav>} 
+         {!windowscreen &&  
+          <>
+          <div className={styles.searchBar}>
+          <div style={{
+                    width: "42px",
+                    height: "39px",
+                    borderRadius: "4px",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginRight: "6px",
+                    cursor: "pointer",
+                  }}>
+                <SearchIcon
+                    className={styles.searchIcon}
+                  />
+                </div>
+          <InputBase placeholder="Search for any services" className={styles.input} style={{
+                paddingLeft: "16px",
+                width: "300px",
+                maxHeight: "30px",
+                fontFamily: "globalFont",
+                color:"white",
+              }}/>
+              
+                </div>
+                </>}
           <div className={styles.cartArea}>
             <div>
               <img
@@ -59,6 +115,7 @@ const Header = () => {
                 alt="Clippet_Design_Services.png"
                 width={32}
                 height={32}
+                onClick={handleOpen}
               />
             </div>
             <div>
@@ -73,13 +130,37 @@ const Header = () => {
           </div>
         </header>
       </div>
-
-      {/* Modal Background Overlay */}
       {mode && (
         <div className={styles.modalOverlay}>
           <Login handleClose={handleClose}/>
         </div>
       )}
+      {sidebar&&
+      <div className={styles.sidebaroverlay}>
+        <div className={styles.sidebarcontainer}>
+          <div className={styles.container}>
+          {categories.map((data, index) => (
+              <div key={index}>
+                <div style={{ display: "flex", padding: "10px 20px 10px 5px"}}>
+            <div
+              style={{
+                display: "flex",
+                flexGrow: "1",
+                // margin: "10px 0px",
+                fontSize: "15px",
+              }}
+            >
+              {data.name}
+            </div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              {openIndex === index ?<ExpandLessIcon onClick={handleExpandLess}/>:<ExpandMoreIcon onClick={() => handleExpandMore(index)}/>}
+            </div>
+          </div>
+              </div>
+            ))}
+            </div>
+            </div>
+        </div>}
     </>
   );
 };

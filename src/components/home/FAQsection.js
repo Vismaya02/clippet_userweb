@@ -35,7 +35,7 @@ const faqData = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     padding: "0px 30px",
   },

@@ -39,11 +39,11 @@ const Footer = () => {
                 <div className={style.colContent}>
                     <div>
                         <Typography variant="h6" className={style.header} style={{marginBottom: "7px" }}>Contact Us</Typography>
-                        <Typography variant="body2" style={{fontSize: "16px",color: "#ffffff",}}>support@clippet.ai</Typography>
+                        <Typography variant="body2" style={{fontSize: "16px",color: "#ffffff",}}><a href="mailto:+91-7624934555" style={{color:"white",textDecoration: "none"}}>support@clippet.ai</a></Typography>
                     </div>
                     <div>
                         <Typography variant="h6" className={style.header} style={{marginBottom: "7px" }}>Careers</Typography>
-                        <Typography variant="body2" style={{fontSize: "16px",color: "#ffffff",}}>careers@clippet.ai</Typography>
+                        <Typography variant="body2" style={{fontSize: "16px",color: "#ffffff",}}><a href="mailto:+91-7624934555" style={{color:"white",textDecoration: "none"}}>careers@clippet.ai</a></Typography>
                     </div>
                     <div style={{marginTop:"40px"}}>
                         <Button style={{
@@ -56,7 +56,7 @@ const Footer = () => {
                     flexDirection: "row",
                     alignItems: "center",
                   }}>
-                            <Image src={Callicon} alt="Clippet_Design_Services.png" style={{ marginRight: "4px" }}/>+91-7624934555
+                            <Image src={Callicon} alt="Clippet_Design_Services.png" style={{ marginRight: "4px" }}/><a href="tel:+91-7624934555" style={{color:"white",textDecoration: "none"}}>+91-7624934555</a>
                         </Button>
                     </div>
                 </div>
@@ -84,13 +84,13 @@ const Footer = () => {
                     </Typography>
                     <ul style={{listStyle:"none",margin:"0px",padding:"0px"}}>
                         <li style={{marginBottom:"8px"}}>
-                            <a style={{ fontSize: "16px"}}>Cancellation & Refund policy</a>
+                            <a href="/refundpolicy" target="_blank" style={{ fontSize: "16px"}}>Cancellation & Refund policy</a>
                         </li>
                         <li style={{marginBottom:"8px"}}>
-                            <a style={{ fontSize: "16px"}}>Privacy policy</a>
+                            <a href="/privacypolicy" target="_blank" style={{ fontSize: "16px"}}>Privacy policy</a>
                         </li>
                         <li style={{marginBottom:"8px"}}>
-                            <a style={{ fontSize: "16px"}}>Terms & Conditions</a>
+                            <a href="/termsandconditons" target="_blank" style={{ fontSize: "16px"}}>Terms & Conditions</a>
                         </li>
                     </ul>
                 </div>

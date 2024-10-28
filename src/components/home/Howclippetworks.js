@@ -39,7 +39,7 @@ const steps = [
     },
   ];
 
-  const useStyles = makeStyles((theme)=>({
+  const useStyles = makeStyles(()=>({
     container:{
         padding:"0px 20px"
     },
@@ -68,6 +68,11 @@ const steps = [
     text2:{
         textAlign:"center",
         margin:"0px"
+    },
+    steps:{
+        marginTop:"20px",
+        display:"grid",
+        gridTemplateColumns:"repeat(auto-fill,minmax(300px, 1fr))",
     },
     stepwrapper:{
         paddingTop:"30px",
@@ -120,7 +125,7 @@ const Howclippetworks = () => {
                     <Image className={classes.leftSideLine} src={leftSideLine}/>
                 </div>
                 <p className={classes.text2}>Our design process streamlined to perfection</p>
-                <div style={{marginTop:"20px", display:"grid", gridTemplateColumns:"auto auto auto auto"}}>
+                <div className={classes.steps}>
                     {steps.map((step)=>(
                         <div className={classes.stepwrapper}>
                         <div className={classes.stepcontainer}>

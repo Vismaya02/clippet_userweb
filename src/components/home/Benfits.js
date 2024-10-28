@@ -61,13 +61,14 @@ const useStyles = makeStyles((theme)=>({
   benefitCardContainer: {
     display:"flex",
     justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
   },
   benefitContainer: {
     display:"flex",
     paddingTop:"30px",
     justifyContent:"center",
-    gap:"15px"
+    gap:"15px",
+    overflowY: "auto",
   },
   benefitCard: {
     backgroundColor:"#6C3AD1",
