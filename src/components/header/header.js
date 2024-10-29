@@ -8,6 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import {InputBase} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import useComponentVisible from "../Hooks/useComponentvisible";
 
 const categories = [
   { name: "Branding", nameApi: "Branding", subcategories: ["Business Cards", "Letter Heads", "Envelope Design", "Certificate Design"] },
@@ -39,6 +40,10 @@ const Header = () => {
     setSidebar(true);
   }
 
+  const handlesidebarclose =() =>{
+    setSidebar(false);
+  }
+
   const windowscreen = useMediaQuery('(min-width:1000px)');
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -50,6 +55,8 @@ const Header = () => {
   const handleExpandLess = () => {
     setOpenIndex(null);
   };
+
+  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   return (
     <>
@@ -136,31 +143,44 @@ const Header = () => {
         </div>
       )}
       {sidebar&&
+      <>
       <div className={styles.sidebaroverlay}>
         <div className={styles.sidebarcontainer}>
           <div className={styles.container}>
           {categories.map((data, index) => (
               <div key={index}>
-                <div style={{ display: "flex", padding: "10px 20px 10px 5px"}}>
+                <div style={{ display: "flex", padding: "0px 20px"}}>
             <div
               style={{
                 display: "flex",
                 flexGrow: "1",
-                // margin: "10px 0px",
+                margin: "10px 0px",
                 fontSize: "15px",
               }}
             >
               {data.name}
             </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center",flexShrink:"0" }}>
               {openIndex === index ?<ExpandLessIcon onClick={handleExpandLess}/>:<ExpandMoreIcon onClick={() => handleExpandMore(index)}/>}
             </div>
           </div>
-              </div>
-            ))}
+          {openIndex === index&&
+            <div className={styles.sidebardropdown} >
+                  {data.subcategories.map((subcategory, subIndex) => (
+                    <div key={subIndex} className={styles.sidebarsubcategory}>
+                      {subcategory}
+                    </div>
+                  ))}
+                </div>
+             }
+          </div>
+          ))}
             </div>
             </div>
-        </div>}
+            <div style={{width:"100%",height:"100%"}} onClick={handlesidebarclose}></div>
+        </div>
+        </>
+        }
     </>
   );
 };

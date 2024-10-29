@@ -162,3 +162,14 @@
 .container{
   margin-top: 10px;
 }
+
+.sidebardropdown{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px;
+}
+
+.sidebarsubcategory{
+  color: grey;
+  padding: 10px 0px;
+}
