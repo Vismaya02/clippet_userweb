@@ -43,3 +43,15 @@
   margin: 0;
   padding: 0;
 }
+
+.scrolltotop{
+  align-items:center;
+  background-color:#8556ff;
+  display:flex;
+  color:white;
+  flex-direction: column;
+}
+
+.scrolltotop:hover{
+  cursor: pointer;
+}

@@ -69,13 +69,14 @@ const useStyles = makeStyles((theme)=>({
     justifyContent:"center",
     gap:"15px",
     overflowY: "auto",
+    width: "100%",
   },
   benefitCard: {
     backgroundColor:"#6C3AD1",
     borderRadius:"10px",
     width:"178px",
     textAlign:"center",
-    padding:"10px 0px",
+    padding:"24px 6px",
     // position: "relative",
     // transition: "2s",
     transition: ".3s ease-in-out",
@@ -85,10 +86,12 @@ const useStyles = makeStyles((theme)=>({
   },
   icon: {
     width:"120px",
-    height:"120px"
+    height:"120px",
+    marginBottom:"20px"
   },
   title: {
-    color:"white"
+    color:"white",
+    marginBottom:"10px"
   },
   subtitle: {
     color:"white"

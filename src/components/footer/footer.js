@@ -1,22 +1,16 @@
-import { Callicon, Clippetfooterlogo, Clippetlogo,Clippetlogo1, Clippetwhite } from "../image"
+import { Callicon, Clippetfooterlogo, Clippetwhite } from "../image"
 import { Image,Button } from "@fluentui/react-components";
 import InstagramIcon from "@mui/icons-material/Instagram"
 import FacebookIcon from "@mui/icons-material/Facebook"
-import Twitter from "@mui/icons-material/Twitter"
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkdeIn from "@mui/icons-material/LinkedIn"
 import style from "./footer.module.css"
 // import { useStyle } from "./useStyle"
 import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-    Divider,
     Box,
     Link,
     Grid2,
     Typography,
-    useMediaQuery,
-    useTheme,
   } from "@mui/material";
 
 const Footer = () => {
@@ -114,10 +108,10 @@ const Footer = () => {
                 <div>
                     <Typography variant="h6" style={{ marginBottom: "8px"}}>Keep in Touch</Typography>
                     <div className={style.socialIcons}>
-                        <a><InstagramIcon style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
-                        <a><FacebookIcon style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
-                        <a><Twitter style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
-                        <a><LinkdeIn style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
+                        <a href="https://www.instagram.com/clippet.design/" target="_blank" rel="noreferrer"><InstagramIcon style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
+                        <a href='https://www.facebook.com/clippet.design/' target='_blank' rel="noreferrer"><FacebookIcon style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
+                        <a href="https://www.linkedin.com/company/clippet/" target="_blank" rel="noreferrer"><LinkdeIn style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
+                        <a href="https://www.youtube.com/@clippet.design" target='_blank' rel="noreferrer"><YouTubeIcon style={{color: "#6F42E5",backgroundColor:"#fff", borderRadius:"50%",padding:"3px"}} /></a>
                     </div>
                 </div>
                 </Box>

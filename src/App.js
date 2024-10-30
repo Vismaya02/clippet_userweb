@@ -11,9 +11,18 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Privacypolicy from './components/privacypolicy/policypolicy';
 import RefundCancellationPolicy from './components/refundpolicy/refundpolicy';
 import Termsandconditions from './components/termsandconditions/termsandconditions';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 
 function App() {
+
+  const handlescrollup = () =>{
+    window.scrollTo({
+      top: 0, // Scroll to the top
+      behavior: "smooth", // Smooth scrolling
+    });
+  }
+
   return (
     <>
     <Router>
@@ -26,6 +35,10 @@ function App() {
             <Staticbanner/>
             <Howclippetworks/>
             <Faqsection/>
+            <div className="scrolltotop" onClick={handlescrollup}>
+              <ArrowDropUpIcon/>
+              <p style={{marginBottom:"5px"}}>Back to top</p>
+            </div>
             <Footer/>
          </>}>
        </Route>    

@@ -32,10 +32,10 @@ const HeroSection=()=>{
                     <Image src={leftsidearrow} className={style.sideImage}/>
                     <div className={style.textContainer}>
                         <span className={style.text}>
-                            <img src={yellowstar} className={style.starImage}/>Best design service platform
+                            <img src={yellowstar} className={style.starImage} alt="Clippet_Design_Services.png"/>Best design service platform
                         </span>
                     </div>
-                    <img src={rightsidearrow} className={style.sideImage}/>
+                    <img src={rightsidearrow} className={style.sideImage} alt="Clippet_Design_Services.png"/>
                 </div>
                     <h1 className={style.title}>India’s First On-demand
                         <br/>
@@ -72,8 +72,8 @@ const HeroSection=()=>{
                 </div>
                 </div>
             </div>
-            <img src={womensitting} className={style.leftImage}/>
-            <img src={manstanding} className={style.rightImage}/>
+            <img src={womensitting} className={style.leftImage} alt="Clippet_Design_Services.png"/>
+            <img src={manstanding} className={style.rightImage} alt="Clippet_Design_Services.png"/>
         </div>
     )
 }

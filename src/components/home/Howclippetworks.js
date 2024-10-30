@@ -131,7 +131,7 @@ const Howclippetworks = () => {
                         <div className={classes.stepcontainer}>
                             <div className={classes.stepnumber}>{step.number}</div>
                             <div >
-                                <img className={classes.stepimage}  src={step.image}/>
+                                <img className={classes.stepimage}  src={step.image} alt="Clippet_Design_Services.png"/>
                             </div>
                             <div>
                                 <h6 className={classes.steptitle}>

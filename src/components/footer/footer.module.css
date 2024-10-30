@@ -46,6 +46,9 @@
     gap: 15px;
     margin-bottom: 20px;
 }
+.socialIcons:hover{
+    cursor: pointer;
+}
 
 .colContent{
     display: flex;

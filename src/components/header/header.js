@@ -8,7 +8,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import {InputBase} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import useComponentVisible from "../Hooks/useComponentvisible";
 
 const categories = [
   { name: "Branding", nameApi: "Branding", subcategories: ["Business Cards", "Letter Heads", "Envelope Design", "Certificate Design"] },
@@ -56,7 +55,6 @@ const Header = () => {
     setOpenIndex(null);
   };
 
-  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   return (
     <>
