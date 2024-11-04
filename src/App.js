@@ -1,16 +1,16 @@
 import './App.css';
-import Footer from './components/footer/footer';
-import Header from './components/header/header';
-import BenefitSection from './components/home/Benfits';
-import BrandsWorkedWith from './components/home/brandsworked';
-import Faqsection from './components/home/FAQsection';
-import HeroSection from './components/home/Herosection';
-import Howclippetworks from './components/home/Howclippetworks';
-import Staticbanner from './components/home/Staticbanner';
+import Footer from './pages/footer/components/footer';
+import Header from './pages/header/components/header';
+import BenefitSection from './pages/home/components/Benfits';
+import BrandsWorkedWith from './pages/home/components/brandsworked';
+import Faqsection from './pages/home/components/FAQsection';
+import HeroSection from './pages/home/components/Herosection';
+import Howclippetworks from './pages/home/components/Howclippetworks';
+import Staticbanner from './pages/home/components/Staticbanner';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Privacypolicy from './components/privacypolicy/policypolicy';
-import RefundCancellationPolicy from './components/refundpolicy/refundpolicy';
-import Termsandconditions from './components/termsandconditions/termsandconditions';
+import Privacypolicy from './pages/privacypolicy/components/policypolicy';
+import RefundCancellationPolicy from './pages/refundpolicy/components/refundpolicy';
+import Termsandconditions from './pages/termsandconditions/components/termsandconditions';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 

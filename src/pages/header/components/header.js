@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Clippetlogo, CartIcon, Profileicon } from "../image";
-import styles from "./header.module.css";
-import Login from "../login/login";
+import { Clippetlogo, CartIcon, Profileicon } from "../../../image";
+import styles from "../styles/header.module.css";
+import Login from "../../login/components/login";
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import SearchIcon from "@mui/icons-material/Search";
@@ -44,15 +44,20 @@ const Header = () => {
   }
 
   const windowscreen = useMediaQuery('(min-width:1000px)');
+  const mobilescreen = useMediaQuery('(min-width:400px)');
 
   const [openIndex, setOpenIndex] = useState(null);
+  const [clickcount,setClickcount] = useState(0)
 
-  const handleExpandMore = (index) => {
+  const handleExpand = (index) => {
+    if (clickcount === 0){
+    setClickcount(clickcount+1)
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  const handleExpandLess = () => {
+    }
+    else{
+    setClickcount(0)
     setOpenIndex(null);
+    }
   };
 
 
@@ -60,7 +65,8 @@ const Header = () => {
     <>
       <div className={styles.headerwrapper}>
         <header className={styles.header}>
-          {!windowscreen&&<div>
+          {!windowscreen&&
+          <div>
             <MenuIcon style={{color:"white", height:"30px", width:"30px"}} onClick={handlesidebaropen}/>
           </div>}
           <div className={styles.logo}>
@@ -147,7 +153,7 @@ const Header = () => {
           <div className={styles.container}>
           {categories.map((data, index) => (
               <div key={index}>
-                <div style={{ display: "flex", padding: "0px 20px"}}>
+                <div className={styles.sidebarmenu} onClick={() => handleExpand(index)}>
             <div
               style={{
                 display: "flex",
@@ -159,7 +165,7 @@ const Header = () => {
               {data.name}
             </div>
             <div style={{ display: "flex", alignItems: "center",flexShrink:"0" }}>
-              {openIndex === index ?<ExpandLessIcon onClick={handleExpandLess}/>:<ExpandMoreIcon onClick={() => handleExpandMore(index)}/>}
+              {openIndex === index ?<ExpandLessIcon />:<ExpandMoreIcon/>}
             </div>
           </div>
           {openIndex === index&&

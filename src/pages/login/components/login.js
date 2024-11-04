@@ -1,6 +1,5 @@
-import zIndex from "@mui/material/styles/zIndex"
-import {clippetword, ClippetFooterLogo, closeicon} from "../image"
-import style from "./style.module.css"
+import {clippetword, ClippetFooterLogo, closeicon} from "../../../image"
+import style from "../styles/style.module.css"
 
 const Login =({handleClose})=>{
     return(

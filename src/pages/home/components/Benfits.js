@@ -8,7 +8,7 @@ import {
     benifitsTwo,
     leftSideLine,
     rightSideLine,
-  } from "../image";
+  } from "../../../image";
 import { makeStyles } from "@mui/styles";
 
 const benefits = [

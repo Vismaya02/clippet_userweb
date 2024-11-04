@@ -65,7 +65,7 @@
 
 .column{
     flex: 0 0 48%;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
 }
 
 /* .solid{
@@ -104,4 +104,11 @@ a{
 
 a:hover{
     text-decoration: underline;
+}
+
+.icons{
+    color: #6F42E5;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 3px;
 }

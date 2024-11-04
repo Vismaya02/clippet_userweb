@@ -6,7 +6,7 @@ import {
     howWorksTwo,
     howWorksThree,
     howWorksone,
-    } from "../image"
+    } from "../../../image"
 import { makeStyles } from "@mui/styles";
 
 

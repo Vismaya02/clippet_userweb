@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   leftSideLine,
   rightSideLine,
-} from "../image";
+} from "../../../image";
 import { makeStyles } from "@mui/styles";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -62,19 +62,38 @@ const useStyles = makeStyles(() => ({
     fontSize: "32px",
     fontWeight: "600",
   },
+  faqsection: {
+    display: "flex",
+    padding: "0px 10px",
+    '&:hover':{
+      cursor:"pointer"
+    }
+  }
 }));
 
 const Faqsection = () => {
   const classes = useStyles();
   const [openIndex, setOpenIndex] = useState(null);
+  const [clickcount,setClickcount] = useState(0)
 
-  const handleExpandMore = (index) => {
+  const handleExpand = (index) => {
+    if (clickcount === 0){
+    setClickcount(clickcount+1)
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  const handleExpandLess = () => {
+    }
+    else{
+    setClickcount(0)
     setOpenIndex(null);
+    }
   };
+  
+  // const handleExpandMore = () =>{
+  //   setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  // }
+  
+  // const handleExpandLess = () => {
+  //   setOpenIndex(null);
+  // };
 
   return (
     <div className={classes.root}>
@@ -91,7 +110,7 @@ const Faqsection = () => {
           key={index}
           style={{ marginBottom: "20px", borderBottom: "1px solid #E8E8E8" }}
         >
-          <div style={{ display: "flex", padding: "0px 10px" }}>
+          <div className={classes.faqsection} onClick={() => handleExpand(index)}>
             <div
               style={{
                 display: "flex",
@@ -104,7 +123,7 @@ const Faqsection = () => {
               {faqdata.question}
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
-              {openIndex === index ?<ExpandLessIcon onClick={handleExpandLess}/>:<ExpandMoreIcon onClick={() => handleExpandMore(index)}/>}
+              {openIndex === index ?<ExpandLessIcon />:<ExpandMoreIcon/>}
             </div>
           </div>
           {openIndex === index && (

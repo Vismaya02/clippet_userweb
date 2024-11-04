@@ -154,6 +154,15 @@
   /* justify-content: space-around; */
 }
 
+.sidebarmenu{
+  display: flex;
+  padding: 0px 20px;
+}
+
+.sidebarmenu:hover{
+  cursor: pointer;
+}
+
 .categorybutton{
   border: none;
   background-color: white;

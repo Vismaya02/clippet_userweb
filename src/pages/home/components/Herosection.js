@@ -4,9 +4,9 @@ import { heropageleftellipse,
          leftsidearrow,
          yellowstar,
          womensitting,
-         manstanding} from "../image";
+         manstanding} from "../../../image";
 import {InputBase} from "@mui/material";
-import style from "./herosection.module.css"
+import style from "../styles/herosection.module.css"
 import {Image} from "@fluentui/react-components";
 import SearchIcon from "@mui/icons-material/Search";
 

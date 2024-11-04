@@ -6,7 +6,7 @@ import {
     tataLogo,
     UCLogo,
     zomatoLogo,
-  } from "../image";
+  } from "../../../image";
   import {Image} from "@fluentui/react-components";
 
   const BrandsWorkedWith = () => {
