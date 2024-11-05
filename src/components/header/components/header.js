@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Clippetlogo, CartIcon, Profileicon } from "../../../image";
 import styles from "../styles/header.module.css";
-import Login from "../../login/components/login";
+import Login from "../../../pages/login/components/login";
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import SearchIcon from "@mui/icons-material/Search";

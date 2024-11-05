@@ -1,6 +1,6 @@
 import './App.css';
-import Footer from './pages/footer/components/footer';
-import Header from './pages/header/components/header';
+import Footer from './components/footer/components/footer';
+import Header from './components/header/components/header';
 import BenefitSection from './pages/home/components/Benfits';
 import BrandsWorkedWith from './pages/home/components/brandsworked';
 import Faqsection from './pages/home/components/FAQsection';
